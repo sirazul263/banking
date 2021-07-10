@@ -1,0 +1,13 @@
+body {
+  padding: 100px;
+}
+.lol {
+  margin-left: 300px;
+  margin-right: 300px;
+}
+#transaction-area {
+  display: none;
+}
+.balance {
+  height: 150px;
+}
