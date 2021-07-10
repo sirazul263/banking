@@ -26,11 +26,15 @@ btnWithdraw.addEventListener("click", function () {
   const withdrawAmount = Number(
     document.getElementById("withdrawAmount").value
   );
-  const currentWithdraw = Number(
-    document.getElementById("withdraw-balance").innerText
-  );
-  const totalWithdraw = withdrawAmount + currentWithdraw;
-  document.getElementById("withdraw-balance").innerText = totalWithdraw;
-  balance -= withdrawAmount;
-  document.getElementById("totalAmount").innerText = balance;
+  if (withdrawAmount <= balance) {
+    const currentWithdraw = Number(
+      document.getElementById("withdraw-balance").innerText
+    );
+    const totalWithdraw = withdrawAmount + currentWithdraw;
+    document.getElementById("withdraw-balance").innerText = totalWithdraw;
+    balance -= withdrawAmount;
+    document.getElementById("totalAmount").innerText = balance;
+  } else {
+    alert("Not enough money");
+  }
 });
